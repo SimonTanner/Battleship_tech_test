@@ -15,3 +15,7 @@ function Board() {
 Board.prototype.convertLetter = function(letter) {
   return letter.charCodeAt() - 65;
 };
+
+Board.prototype.shipLocation = function(letter, index, type) {
+  this.ship_types[type].location = [this.convertLetter(letter), index - 1];
+};

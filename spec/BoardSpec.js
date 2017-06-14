@@ -22,9 +22,11 @@ describe("Board", function() {
     });
   });
 
-  // describe("shipLocation", function{
-  //   board.shipLocation(A, 5);
-  //   expect
-  // })
+  describe("shipLocation", function() {
+    it("stores the location given for a particular ship in the ship_types table", function() {
+      board.shipLocation("A", 5, "Carrier");
+      expect(board.ship_types.Carrier.location).toEqual([0,4]);
+    });
+  });
 
 });
