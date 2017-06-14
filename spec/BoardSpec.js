@@ -12,4 +12,19 @@ describe("Board", function() {
     }
   });
 
+  it("has a data structure for storing ships and their location in", function() {
+    expect(Object.keys(board.ship_types).length).toEqual(5);
+  });
+
+  describe("convertLetter", function() {
+    it("converts a letter into the corresponding number for the board array", function() {
+      expect(board.convertLetter("A")).toEqual(0);
+    });
+  });
+
+  // describe("shipLocation", function{
+  //   board.shipLocation(A, 5);
+  //   expect
+  // })
+
 });
