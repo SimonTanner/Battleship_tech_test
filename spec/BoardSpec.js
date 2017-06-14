@@ -25,7 +25,12 @@ describe("Board", function() {
   describe("shipLocation", function() {
     it("stores the location given for a particular ship in the ship_types table", function() {
       board.shipLocation("A", 5, "Carrier");
-      expect(board.ship_types.Carrier.location).toEqual([0,4]);
+      expect(board.ship_types.Carrier.location).toEqual([4, 0]);
+    });
+
+    it("updates the board_array to show a ship is in that location", function() {
+      board.shipLocation("A", 5, "Carrier");
+      expect(board.board_array[4][0]).not.toEqual(board.symbol);
     });
   });
 
